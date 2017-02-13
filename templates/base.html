@@ -24,20 +24,27 @@
         </a>
 
         <div class="right menu">
-          <a class="item" href="{% url "users:login" %}">
-            ورود
-          </a>
-          <a class="item" href="{% url "users:signup" %}">
-            ثبت‌نام‌
-          </a>
+          {% if user.is_authenticated %}
+            <a class="item" href="{% url "users:profile" %}">
+              صفحه شخصی
+            </a>
+            <a class="item" href="{% url "users:logout" %}">
+              خروج
+            </a>
+          {% else %}
+            <a class="item" href="{% url "users:login" %}">
+              ورود
+            </a>
+            <a class="item" href="{% url "users:signup" %}">
+              ثبت‌نام‌
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
 
-    <div class="ui middle aligned center aligned grid">
-      {% block content %}
-      {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
