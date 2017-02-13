@@ -14,8 +14,27 @@
   </head>
 
   <body>
-    {% block content %}
-    {% endblock %}
+    <div class="ui large inverted menu">
+      <div class="ui container">
+        <a class="header item" href="#">
+          پذیرش‌یار
+        </a>
+
+        <div class="right menu">
+          <a class="item" href="{% url "users:login" %}">
+            ورود
+          </a>
+          <a class="item" href="{% url "users:signup" %}">
+            ثبت‌نام‌
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+      {% block content %}
+      {% endblock %}
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
