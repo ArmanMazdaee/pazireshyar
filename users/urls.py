@@ -18,4 +18,9 @@ urlpatterns = [
         {'template_name': 'users/login.html'},
         name='login',
     ),
+    url(
+        r'^logout/$',
+        auth_views.logout_then_login,
+        name='logout',
+    ),
 ]
