@@ -16,6 +16,7 @@ class University(models.Model):
 class Field(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=5000)
+    image = models.ImageField(upload_to='images/field/')
 
     def __str__(self):
         return self.name
