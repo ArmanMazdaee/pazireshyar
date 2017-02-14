@@ -10,11 +10,11 @@ class SignupForm(UserCreationForm):
         required=True,
     )
     first_name = CharField(
-        label=_("First name"),
+        label=_('first name'),
         required=True,
     )
     last_name = CharField(
-        label=_("Last name"),
+        label=_('last name'),
         required=True,
     )
 
