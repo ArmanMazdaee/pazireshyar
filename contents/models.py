@@ -27,8 +27,9 @@ class Program(models.Model):
     university = models.ForeignKey(University, on_delete=models.CASCADE)
     field = models.ForeignKey(Field, on_delete=models.CASCADE)
     description = models.CharField(max_length=5000)
-    degree = (('M', 'Master'),
+    DEGREE = (('M', 'Master'),
               ('P', 'PHD'))
+    degree = models.CharField(max_length=1, choices=DEGREE)
     minimum_toefl = models.IntegerField()
     minimum_gre = models.IntegerField()
     other_prerequisite = models.CharField(max_length=5000)
