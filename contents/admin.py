@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import University, Field, Program
+
+
+admin.register(University)
+admin.register(Field)
+admin.register(Program)

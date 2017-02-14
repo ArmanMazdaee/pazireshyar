@@ -1,3 +1,28 @@
 from django.db import models
 
-# Create your models here.
+
+class University(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=5000)
+    country = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    rank = models.IntegerField()
+    age = models.IntegerField()
+    image = models.ImageField(upload_to='images/university/')
+
+
+class Field(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=5000)
+
+
+class Program(models.Model):
+    name = models.CharField(max_length=50)
+    university = models.ForeignKey(University, on_delete=models.CASCADE)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE)
+    description = models.CharField(max_length=5000)
+    degree = (('M', 'Master'),
+              ('P', 'PHD'))
+    minimum_toefl = models.IntegerField()
+    minimum_gre = models.IntegerField()
+    other_prerequisite = models.CharField(max_length=5000)
