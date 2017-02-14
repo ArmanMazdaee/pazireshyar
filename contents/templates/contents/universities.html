@@ -16,7 +16,7 @@
             <select class="ui search dropdown" name="country">
               {% for country in countries %}
                 <option value="{{ country }}"
-                  {% ifequal country input_country %} selected {% endifequal %}>
+                  {% ifequal country input_country %} selected="selected" {% endifequal %}>
                   {{ country }}
                 </option>
               {% endfor %}
@@ -33,14 +33,16 @@
       <div class="ui link cards">
         {% for university in universities %}
           <div class="card">
-            <div class="image">
-              <img src="{{ university.image.url }}" />
-            </div>
-            <div class="content">
-              <div class="ui header teal">
-                {{ university.name }}
+            <a href="{% url "contents:university" university.id %}">
+              <div class="image">
+                <img src="{{ university.image.url }}" />
               </div>
-            </div>
+              <div class="content">
+                <div class="ui header teal">
+                  {{ university.name }}
+                </div>
+              </div>
+            </a>
           </div>
         {% endfor %}
       </div>
