@@ -3,6 +3,6 @@ from django.contrib import admin
 from .models import University, Field, Program
 
 
-admin.register(University)
-admin.register(Field)
-admin.register(Program)
+admin.site.register(University)
+admin.site.register(Field)
+admin.site.register(Program)
