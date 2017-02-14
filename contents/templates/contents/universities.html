@@ -30,18 +30,20 @@
     </div>
 
     <div class="twelve wide column">
-      <div class="ui link cards">
+      <div class="ui three column grid">
         {% for university in universities %}
-          <a href="{% url "contents:university" university.id %}" class="card">
-            <div class="image">
-              <img src="{{ university.image.url }}" />
-            </div>
-            <div class="content">
-              <div class="ui header teal">
-                {{ university.name }}
+          <div class="column">
+            <a href="{% url "contents:university" university.id %}" class="ui fluid card">
+              <div class="image">
+                <img src="{{ university.image.url }}" />
               </div>
-            </div>
-          </a>
+              <div class="content">
+                <div class="ui header teal">
+                  {{ university.name }}
+                </div>
+              </div>
+            </a>
+          </div>
         {% endfor %}
       </div>
     </div>
