@@ -19,8 +19,16 @@
   <body>
     <div class="ui large inverted menu">
       <div class="ui container">
-        <a class="header item" href="#">
-          پذیرش‌یار
+        <a class="header item" href="{% url "contents:universities" %}">
+          دانشگاه‌ها
+        </a>
+
+        <a class="header item" href="{% url "contents:fields" %}">
+          رشته‌ها
+        </a>
+
+        <a class="header item" href="{% url "contents:programs" %}">
+          برنامه‌ها
         </a>
 
         <div class="right menu">
