@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
 
-# Create your views here.
+from .models import University
+
+
+class University(DetailView):
+    template_name = 'contents/university.html'
+    model = University
