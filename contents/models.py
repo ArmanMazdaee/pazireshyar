@@ -31,7 +31,6 @@ class Program(models.Model):
               ('P', 'PHD'))
     degree = models.CharField(max_length=1, choices=DEGREE)
     minimum_toefl = models.IntegerField()
-    minimum_gre = models.IntegerField()
     other_prerequisite = models.CharField(max_length=5000)
 
     def __str__(self):
