@@ -9,4 +9,9 @@ urlpatterns = [
         views.University.as_view(),
         name='university',
     ),
+    url(
+        r'^universities/$',
+        views.universities,
+        name='universities',
+    ),
 ]
