@@ -32,3 +32,8 @@ def universities(request):
         'universities': universities,
     }
     return render(request, 'contents/universities.html', context)
+
+
+class Field(DetailView):
+    template_name = 'contents/field.html'
+    model = models.Field

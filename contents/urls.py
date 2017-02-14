@@ -14,4 +14,9 @@ urlpatterns = [
         views.universities,
         name='universities',
     ),
+    url(
+        r'^field/(?P<pk>[0-9]+)/$',
+        views.Field.as_view(),
+        name='field',
+    ),
 ]

@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui container clearing segment">
+    <h2 class="ui teal header">
+      {{ field.name }}
+    </h2>
+
+    <img class="ui large right floated image" src="{{ field.image.url }}" />
+
+    <p>
+      {{ field.description }}
+    </p>
+  </div>
+{% endblock %}
