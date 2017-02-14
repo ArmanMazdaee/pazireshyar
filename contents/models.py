@@ -7,7 +7,6 @@ class University(models.Model):
     country = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     rank = models.IntegerField()
-    age = models.IntegerField()
     image = models.ImageField(upload_to='images/university/')
 
 
