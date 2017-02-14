@@ -24,4 +24,14 @@ urlpatterns = [
         views.fields,
         name='fields',
     ),
+    url(
+        r'^program/(?P<pk>[0-9]+)/$',
+        views.Program.as_view(),
+        name='program',
+    ),
+    url(
+        r'^programs/$',
+        views.programs,
+        name='programs',
+    ),
 ]

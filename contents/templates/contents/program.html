@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui container clearing segment">
+    <h2 class="ui teal header">
+      {{ program.name }}
+    </h2>
+
+    <img class="ui large right floated image" src="{{ program.university.image.url }}" />
+
+    <p>
+      <a href="{% url "contents:university" program.university.id %}">
+        دانشگاه
+        {{ program.university.name }}
+      </a>
+    </p>
+
+    <p>
+      <a href="{% url "contents:field" program.field.id %}">
+        رشته
+        {{ program.field.name }}
+      </a>
+    </p>
+
+    <p>
+      مقطع
+      {{ program.get_degree_display }}
+    </p>
+
+    <p>
+      حداقل نمره تافل
+      {{ program.minimum_toefl }}
+    </p>
+
+    <p>
+      ساید پیشنیازها:
+      {{ program.other_prerequisite }}
+    </p>
+
+    <p>
+      {{ program.description }}
+    </p>
+  </div>
+{% endblock %}
