@@ -32,18 +32,16 @@
     <div class="twelve wide column">
       <div class="ui link cards">
         {% for university in universities %}
-          <div class="card">
-            <a href="{% url "contents:university" university.id %}">
-              <div class="image">
-                <img src="{{ university.image.url }}" />
+          <a href="{% url "contents:university" university.id %}" class="card">
+            <div class="image">
+              <img src="{{ university.image.url }}" />
+            </div>
+            <div class="content">
+              <div class="ui header teal">
+                {{ university.name }}
               </div>
-              <div class="content">
-                <div class="ui header teal">
-                  {{ university.name }}
-                </div>
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         {% endfor %}
       </div>
     </div>
