@@ -19,4 +19,9 @@ urlpatterns = [
         views.Field.as_view(),
         name='field',
     ),
+    url(
+        r'^fields/$',
+        views.fields,
+        name='fields',
+    ),
 ]
