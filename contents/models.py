@@ -9,10 +9,16 @@ class University(models.Model):
     rank = models.IntegerField()
     image = models.ImageField(upload_to='images/university/')
 
+    def __str__(self):
+        return self.name
+
 
 class Field(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=5000)
+
+    def __str__(self):
+        return self.name
 
 
 class Program(models.Model):
@@ -25,3 +31,6 @@ class Program(models.Model):
     minimum_toefl = models.IntegerField()
     minimum_gre = models.IntegerField()
     other_prerequisite = models.CharField(max_length=5000)
+
+    def __str__(self):
+        return self.name
