@@ -92,7 +92,7 @@ def programs(request):
     if input_degree != '':
         search['degree'] = input_degree
     if input_toefl != '':
-        search['minimum_toefl__gte'] = input_toefl
+        search['minimum_toefl__lte'] = input_toefl
     programs = models.Program.objects.filter(**search)
 
     context = {
