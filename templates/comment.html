@@ -1,0 +1,52 @@
+{% load comments %}
+
+<div class="ui container segment">
+  <h3 class="ui header teal">
+    نظرات
+  </h3>
+
+  <div class="ui comments">
+    {% get_comment_list for commentable as comment_list %}
+    {% for comment in comment_list %}
+      <div class="comment">
+        <div class="content">
+          <div class="author">
+            {{ comment.user.username }}
+          </div>
+
+          <div class="metadata">
+            <span class="date">
+              {{ comment.submit_date }}
+            </span>
+          </div>
+
+          <div class="text">
+            {{ comment.comment }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if user.is_authenticated %}
+    {% get_comment_form for commentable as form %}
+    <form class="ui form" action="{% comment_form_target %}" method="POST">
+      {% csrf_token %}
+      <div class="field">
+        <label> نظر </label>
+        {{ form.comment }}
+      </div>
+
+      {{ form.content_type }}
+      {{ form.object_pk }}
+      {{ form.timestamp }}
+      {{ form.security_hash }}
+      <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+
+      <input class="ui fluid large teal submit button" type="submit"
+        value="ثبت نظر" id="id_submit" />
+    </form>
+  {% endif %}
+
+</div>
+
