@@ -4,6 +4,20 @@ from django.shortcuts import render
 from . import models
 
 
+def index(request):
+    universities = models.University.objects.all()[0:4]
+    fields = models.Field.objects.all()[0:4]
+    programs = models.Program.objects.all()[0:4]
+
+    context = {
+        'universities': universities,
+        'fields': fields,
+        'programs': programs,
+    }
+
+    return render(request, 'contents/index.html', context)
+
+
 class University(DetailView):
     template_name = 'contents/university.html'
     model = models.University
